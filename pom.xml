@@ -10,9 +10,15 @@
   <name>Kotlin Playground</name>
 
   <properties>
-    <kotlin.version>1.9.21</kotlin.version>
     <main.class>io.github.mdenburger.playground.MainKt</main.class>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- App dependencies -->
+    <kotlin.version>1.9.21</kotlin.version>
+
+    <!-- Test dependencies -->
+    <assertk.version>0.28.0</assertk.version>
+    <junit.version>5.10.1</junit.version>
 
     <!-- Build dependencies -->
     <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
@@ -24,7 +30,24 @@
       <artifactId>kotlin-stdlib</artifactId>
       <version>${kotlin.version}</version>
     </dependency>
-  </dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.willowtreeapps.assertk</groupId>
+      <artifactId>assertk-jvm</artifactId>
+      <version>${assertk.version}</version>
+      <scope>test</scope>
+    </dependency>  </dependencies>
 
   <build>
     <finalName>${project.artifactId}</finalName>
